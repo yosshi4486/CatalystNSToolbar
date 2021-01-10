@@ -9,7 +9,7 @@
 import UIKit
 
 /// Validation for Catalyst toolbar item.
-protocol CatalystNSToolbarItemValidation {
+open protocol CatalystNSToolbarItemValidation {
 
     /// If this method is implemented and returns false, NSToolbar will disable theItem; returning true causes theItem to be enabled.Required
     func validateToolbarItem(_ item: CatalystNSToolbarItem) -> Bool

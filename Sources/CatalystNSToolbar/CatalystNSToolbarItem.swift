@@ -9,10 +9,10 @@
 import UIKit
 
 /// A specialized toolbar item for Catalyst.
-class CatalystNSToolbarItem: NSToolbarItem {
+open class CatalystNSToolbarItem: NSToolbarItem {
 
     /// If the target is not nil, send message to it, otherwise start to seach validation object from responder chain.
-    override func validate() {
+    open override func validate() {
 
         if let validation = target as? CatalystNSToolbarItemValidation {
             isEnabled = validation.validateToolbarItem(self)

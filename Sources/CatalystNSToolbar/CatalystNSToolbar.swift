@@ -9,7 +9,7 @@
 import UIKit
 
 /// A specialized toolbar for Mac Catalyst.
-class CatalystNSToolbar: NSToolbar {
+open class CatalystNSToolbar: NSToolbar {
 
     /// The UIResponder object which is staring point of searching responder chain.
     ///
@@ -35,7 +35,7 @@ class CatalystNSToolbar: NSToolbar {
     ///
     ///     }
     ///
-    var startingPointOfSearchingResponderChain: UIResponder?
+    open var startingPointOfSearchingResponderChain: UIResponder?
 
 }
 
