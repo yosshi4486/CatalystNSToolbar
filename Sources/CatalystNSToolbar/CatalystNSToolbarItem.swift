@@ -14,12 +14,12 @@ class CatalystNSToolbarItem: NSToolbarItem {
     /// If the target is not nil, send message to it, otherwise start to seach validation object from responder chain.
     override func validate() {
 
-        if let validation = target as? CatalystToolbarItemValidation {
+        if let validation = target as? CatalystNSToolbarItemValidation {
             isEnabled = validation.validateToolbarItem(self)
             return
         }
 
-        guard let catalystToolbar = toolbar as? CatalystToolbar else {
+        guard let catalystToolbar = toolbar as? CatalystNSToolbar else {
             super.validate()
             return
         }
@@ -28,7 +28,7 @@ class CatalystNSToolbarItem: NSToolbarItem {
 
         // Find a object which adopt CatalystToolbarItemValidation.
         while responder != nil {
-            if let validation = responder as? CatalystToolbarItemValidation {
+            if let validation = responder as? CatalystNSToolbarItemValidation {
                 isEnabled = validation.validateToolbarItem(self)
                 return
             }
